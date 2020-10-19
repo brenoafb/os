@@ -91,9 +91,7 @@ void msg_handler() {
     printf("Reader: received termination\n");
     end = 1;
   } else {
-    printf("*msgsz: %d\n", *msgsz);
     int nbytes = msgrcv(msgid, &msg_rec, *msgsz, 0, 0);
-    printf("nbytes: %d\n", nbytes);
     if (nbytes < 0) {
       fprintf(stderr, "Reader: message receive error\n");
       end = 2;

@@ -106,7 +106,6 @@ int send_message(char *message) {
     return 0;
   }
   *msgsz = strlen(message) + 1;
-  printf("*msgsz: %d\n", *msgsz);
   msg_send.type = 1;
   strncpy(msg_send.buf, message, *msgsz);
   msgsnd(msgid, &msg_send, *msgsz, 0);
